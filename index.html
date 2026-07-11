@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.G Collective - Define Your Culture</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>A.G Collection</h2>
+                <p>Define Your Culture</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#produk">Produk</a></li>
+                    <li class="dropdown">
+                        <a href="#kategori">Kategori</a>
+                    </li>
+                    <li><button type="button" class="nav-link-btn" id="cart-link" onclick="showCart()">Keranjang (<span id="cart-count">0</span>)</button></li>
+                    <li class="role-switch">
+                        <span class="role-label">Masuk sebagai</span>
+                        <div class="role-toggle">
+                            <button type="button" class="role-btn" id="nav-role-buyer" onclick="switchToBuyerMode()">
+                                <i class="fas fa-user"></i><span>Pembeli</span>
+                            </button>
+                            <button type="button" class="role-btn" id="nav-role-admin" onclick="handleAdminNavClick()">
+                                <i class="fas fa-user-shield"></i><span>Admin</span>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di A.G Collection</h1>
+            <p>Define Your Culture dengan koleksi fashion terbaik kami</p>
+            <button class="cta-button" onclick="scrollToProducts()">Belanja Sekarang</button>
+        </div>
+    </section>
+
+    <!-- Produk Unggulan -->
+    <main>
+        <section id="produk" class="products-section">
+            <div class="container">
+                <h2>Produk Unggulan</h2>
+                <div class="products-grid" id="products-grid">
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Kategori -->
+        <section id="kategori" class="kategori-section">
+            <div class="container">
+                <h2 class="section-title">Kategori Produk</h2>
+                <div class="kategori-grid">
+                    <a href="#" class="kategori-card" data-category="wanita">
+                        <i class="fas fa-female"></i>
+                        <span>Wanita</span>
+                    </a>
+                    <a href="#" class="kategori-card" data-category="pria">
+                        <i class="fas fa-male"></i>
+                        <span>Pria</span>
+                    </a>
+                    <a href="#" class="kategori-card" data-category="anak">
+                        <i class="fas fa-child"></i>
+                        <span>Anak-anak</span>
+                    </a>
+                    <a href="#" class="kategori-card" data-category="unisex">
+                        <i class="fas fa-users"></i>
+                        <span>Unisex</span>
+                    </a>
+                      </a>
+                    <a href="#" class="kategori-card" data-category="aksesoris">
+                        <i class="fas fa-crown"></i>
+                        <span>Aksesoris</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keranjang Modal -->
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCart()">&times;</span>
+                <h2>Keranjang Belanja (<span id="modal-cart-count">0</span>)</h2>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <h3>Total: Rp <span id="cart-total">0</span></h3>
+                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Detail Modal -->
+        <div id="product-detail-modal" class="modal">
+            <div class="modal-content detail-modal-content">
+                <span class="close" onclick="closeProductDetail()">&times;</span>
+                <div class="detail-body">
+                    <img id="detail-image" src="" alt="" class="detail-image"
+                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 250%22><rect fill=%22%23d4b483%22 width=%22300%22 height=%22250%22/><text x=%22150%22 y=%22130%22 font-family=%22Poppins%22 font-size=%2214%22 fill=%22%235c4033%22 text-anchor=%22middle%22>📷</text></svg>'">
+                    <div class="detail-info">
+                        <h2 id="detail-name-title"></h2>
+                        <p class="product-category" id="detail-category"></p>
+                        <div class="product-price" id="detail-price"></div>
+                        <p class="detail-stock" id="detail-stock"></p>
+                        <p class="detail-description" id="detail-description"></p>
+                        <button class="add-to-cart" id="detail-add-btn" onclick="addToCartFromDetail()">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Method Modal -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePayment()">&times;</span>
+                <h2 class="modal-title">Pilih Metode Pembayaran</h2>
+                <div class="payment-methods" id="payment-methods-list">
+                    <button class="payment-option" onclick="selectCOD()">📦 COD (Bayar di Tempat)</button>
+                    <button class="payment-option" onclick="showQRIS()">🔳 QRIS</button>
+                    <button class="payment-option" onclick="showBank()">🏦 Transfer Bank</button>
+                    <button class="payment-option" onclick="showEwallet()">📱 E-Wallet (OVO/GoPay/Dana)</button>
+                </div>
+
+                <!-- Tampilan QR Code -->
+                <div id="qris-display" class="qris-display">
+                    <h3>Scan QR di bawah ini</h3>
+                    <img src="image/qris.jpg" alt="QRIS A.G Collection" class="qris-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 250 250%22><rect fill=%22%23f5e8c7%22 width=%22250%22 height=%22250%22/><text x=%22125%22 y=%22125%22 font-family=%22Poppins%22 font-size=%2214%22 fill=%22%235c4033%22 text-anchor=%22middle%22>Gambar QRIS%0Abelum ditemukan</text></svg>'">
+                    <div id="qris-order-summary" class="qris-order-summary"></div>
+                    <p class="qris-amount">Total yang harus dibayar: <strong>Rp <span id="qris-total">0</span></strong></p>
+                    <p class="qris-note">Setelah pembayaran berhasil, klik tombol di bawah</p>
+                    <button class="checkout-btn" onclick="confirmQRISPayment()">Saya Sudah Bayar</button>
+                    <button class="payment-back-btn" onclick="hideQRIS()">← Kembali pilih metode lain</button>
+                </div>
+
+                <!-- Pilihan E-Wallet -->
+                <div id="ewallet-display" class="qris-display">
+                    <h3>Pilih E-Wallet</h3>
+                    <div class="payment-methods">
+                        <button class="payment-option" onclick="showDetailsForm('E-Wallet - OVO')">📱 OVO</button>
+                        <button class="payment-option" onclick="showDetailsForm('E-Wallet - GoPay')">📱 GoPay</button>
+                        <button class="payment-option" onclick="showDetailsForm('E-Wallet - DANA')">📱 DANA</button>
+                        <button class="payment-option" onclick="showDetailsForm('E-Wallet - ShopeePay')">📱 ShopeePay</button>
+                    </div>
+                    <button class="payment-back-btn" onclick="hideEwallet()">← Kembali pilih metode lain</button>
+                </div>
+
+                <!-- Pilihan Transfer Bank -->
+                <div id="bank-display" class="qris-display">
+                    <h3>Pilih Bank</h3>
+                    <div class="payment-methods">
+                        <button class="payment-option" onclick="showDetailsForm('Transfer Bank - BCA')">🏦 BCA</button>
+                        <button class="payment-option" onclick="showDetailsForm('Transfer Bank - BNI')">🏦 BNI</button>
+                        <button class="payment-option" onclick="showDetailsForm('Transfer Bank - BRI')">🏦 BRI</button>
+                        <button class="payment-option" onclick="showDetailsForm('Transfer Bank - Mandiri')">🏦 Mandiri</button>
+                    </div>
+                    <button class="payment-back-btn" onclick="hideBank()">← Kembali pilih metode lain</button>
+                </div>
+
+                <!-- Form Data Pembeli (muncul setelah metode dipilih) -->
+                <div id="payment-details-form" class="qris-display">
+                    <h3>Lengkapi Data Pengiriman</h3>
+                    <p class="details-method-label">Metode: <strong id="details-method-name"></strong></p>
+                    <div class="details-form-fields">
+                        <input type="text" id="detail-name" placeholder="Nama Penerima">
+                        <input type="text" id="detail-phone" placeholder="No. HP/WhatsApp">
+                        <input type="email" id="detail-email" placeholder="Email (opsional)">
+                        <input type="text" id="detail-address" placeholder="Alamat Lengkap (Nama Jalan, No. Rumah, RT/RW)">
+                        <div class="details-form-row">
+                            <input type="text" id="detail-kecamatan" placeholder="Kecamatan/Kelurahan">
+                            <input type="text" id="detail-city" placeholder="Kota/Kabupaten">
+                        </div>
+                        <div class="details-form-row">
+                            <input type="text" id="detail-province" placeholder="Provinsi (opsional)">
+                            <input type="text" id="detail-postal" placeholder="Kode Pos (opsional)">
+                        </div>
+                        <input type="text" id="detail-account" placeholder="No. Rekening/Akun Pengirim (untuk verifikasi pembayaran)">
+                        <textarea id="detail-note" placeholder="Catatan untuk kurir (opsional)" rows="2"></textarea>
+                    </div>
+                    <button class="checkout-btn" onclick="submitPaymentDetails()">Konfirmasi Pesanan</button>
+                    <button class="payment-back-btn" onclick="hideDetailsForm()">← Kembali</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Login Modal -->
+        <div id="admin-login-modal" class="modal">
+            <div class="modal-content" style="max-width: 400px;">
+                <span class="close" onclick="closeAdminLogin()">&times;</span>
+                <div class="admin-login-icon"><i class="fas fa-user-shield"></i></div>
+                <h2 class="modal-title">Login Admin</h2>
+                <p class="admin-login-subtitle">Masukkan kredensial admin untuk mengelola stok</p>
+                <div class="details-form-fields">
+                    <input type="text" id="admin-username" placeholder="Username Admin" autocomplete="username" onkeydown="if(event.key==='Enter') document.getElementById('admin-password').focus()">
+                    <input type="password" id="admin-password" placeholder="Password Admin" autocomplete="current-password" onkeydown="if(event.key==='Enter') adminLogin()">
+                </div>
+                <button class="checkout-btn" onclick="adminLogin()">Masuk</button>
+            </div>
+        </div>
+
+        <!-- Admin Panel - Halaman Penuh -->
+        <div id="admin-panel-modal" class="admin-page">
+            <div class="admin-page-header">
+                <button class="admin-page-back" onclick="closeAdminPanel()"><i class="fas fa-arrow-left"></i> Kembali ke Toko</button>
+                <h2 class="admin-page-title"><i class="fas fa-user-shield"></i> Panel Admin - Kelola Produk</h2>
+                <button class="admin-page-logout" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Logout Admin</button>
+            </div>
+            <div class="admin-page-body">
+                <div class="admin-panel-toolbar">
+                    <button class="btn-add-new-product" onclick="toggleNewProductForm()"><i class="fas fa-plus"></i> Tambah Produk Baru</button>
+                </div>
+                <div class="admin-edit-panel" id="admin-new-product-form" style="display:none;"></div>
+                <div id="admin-products-list" class="admin-products-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>A.G Collection</h3>
+                    <p>Define Your Culture</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p>📧 info@agcollection.com</p>
+                    <p>📱 +62 857-9701-6732</p>
+                    <p>📍 Jl. Fashion No. 142, Bandung-Dago</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dnda0251?igsh=MXNha2h5NXh2NWg2Mg==">Instagram</a> 
+                        <a href="#">TikTok</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A.G Collection. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
