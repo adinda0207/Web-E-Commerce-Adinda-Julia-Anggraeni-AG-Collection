@@ -49,7 +49,7 @@ Simulasi pembayaran menggunakan QRIS lengkap dengan ringkasan pesanan dan total 
 
 ## Video Demo
 
-Video demonstrasi alur penggunaan website A.G Collection (dari Home hingga proses checkout) dapat ditonton melalui link berikut:
+Video demonstrasi alur penggunaan website A.G Collection (dari Home hingga proses checkout) link YouTube:
 
 📺 **YouTube:** [https://youtu.be/IzbHQU0vRIU](https://youtu.be/IzbHQU0vRIU)
 
