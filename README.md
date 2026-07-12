@@ -33,7 +33,7 @@ Navigasi produk berdasarkan kategori: Wanita, Pria, Anak-anak, Unisex, dan Akses
 **Tampilan Mobile — Produk Unggulan**
 Website responsif dan tetap nyaman diakses lewat perangkat mobile.
 
-![Tampilan Mobile](produkmobile.jpg)
+![Tampilan Mobile](image/produkmobile.jpg)
 
 **Tampilan Mobile Simulasi Checkout — Form Data Pengiriman**
 Pelanggan mengisi data penerima dan alamat pengiriman sebelum lanjut ke pembayaran.
