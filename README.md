@@ -3,6 +3,58 @@
 
 ---
 
+## 👤 Identitas
+
+| Keterangan | Detail |
+|---|---|
+| **Nama** | *Adinda Julia Anggraeni* |
+| **NIM** | *209250044* |
+| **Kelas** | *ABI 2* |
+
+---
+
+## Dokumentasi Tampilan Website
+
+**Halaman Home-Dsktop**
+Tampilan awal website dengan hero section dan tagline "Define Your Culture".
+
+![Halaman Home](image/home.jpg)
+
+**Halaman Produk-Desktop**
+Menampilkan daftar produk unggulan lengkap dengan kategori, harga, dan stok.
+
+![Halaman Produk](image/produk.jpg)
+
+**Halaman Kategori-Desktop**
+Navigasi produk berdasarkan kategori: Wanita, Pria, Anak-anak, Unisex, dan Aksesoris.
+
+![Halaman Kategori-Desktop](image/kategori.jpg)
+
+**Tampilan Mobile — Produk Unggulan**
+Website responsif dan tetap nyaman diakses lewat perangkat mobile.
+
+![Tampilan Mobile](produkmobile.jpg)
+
+**Tampilan Mobile Simulasi Checkout — Form Data Pengiriman**
+Pelanggan mengisi data penerima dan alamat pengiriman sebelum lanjut ke pembayaran.
+
+![Form Checkout](image/checkout.jpg)
+
+**Tampilan Mobile Simulasi Checkout — Pembayaran QRIS**
+Simulasi pembayaran menggunakan QRIS lengkap dengan ringkasan pesanan dan total tagihan.
+
+![Simulasi QRIS](image/mobileqris.jpg)
+
+---
+
+## Video Demo
+
+Video demonstrasi alur penggunaan website A.G Collection (dari Home hingga proses checkout) dapat ditonton melalui link berikut:
+
+📺 **YouTube:** [https://youtu.be/IzbHQU0vRIU](https://youtu.be/IzbHQU0vRIU)
+
+---
+
 ## 📑 Daftar Isi
 
 1. [Nama Bisnis, Deskripsi, dan Value Proposition](#1-nama-bisnis-deskripsi-dan-value-proposition)
@@ -12,10 +64,7 @@
 5. [Model Bisnis & Revenue Stream](#5-model-bisnis--revenue-stream)
 6. [Strategi Harga, Promosi, dan Diskon](#6-strategi-harga-promosi-dan-diskon)
 7. [Proses Checkout & Simulasi Payment Gateway](#7-proses-checkout--simulasi-payment-gateway)
-8. [Rencana SEO, Keamanan, dan Pemeliharaan](#8-rencana-seo-keamanan-dan-pemeliharaan)
-9. [Rencana Penggunaan Data Analytics](#9-rencana-penggunaan-data-analytics-untuk-pengambilan-keputusan)
-10. [Struktur Proyek](#struktur-proyek)
-11. [Kontak](#kontak)
+8. [Kontak](#kontak)
 
 ---
 
@@ -144,41 +193,6 @@ A.G Collection adalah toko fashion online yang menjual pakaian dan aksesoris unt
 - 🔳 **QRIS** — pemindaian kode QR untuk pembayaran instan
 - 🏦 **Transfer Bank** — BCA, BNI, BRI, Mandiri
 - 📱 **E-Wallet** — OVO, GoPay, DANA, ShopeePay
-
----
-
-## 8. Rencana SEO, Keamanan, dan Pemeliharaan
-
-**Rencana SEO:**
-- Optimasi judul halaman & meta description dengan kata kunci relevan 
-- Struktur URL dan heading yang rapi (H1, H2, H3) untuk setiap kategori produk
-- Optimasi gambar produk 
-- Pendaftaran ke Google Search Console dan pembuatan sitemap.xml
-- Konten blog/artikel seputar tren fashion untuk meningkatkan trafik organik
-
-**Keamanan:**
-- Autentikasi login admin dengan kredensial terenkripsi (hashing password)
-- Validasi input pada form checkout & login untuk mencegah injeksi/skrip berbahaya
-- Penggunaan HTTPS untuk seluruh traffic website
-- Pembatasan akses panel admin hanya untuk akun terverifikasi
-- Backup data produk & transaksi secara berkala
-
-**Pemeliharaan:**
-- Update katalog produk dan stok secara rutin melalui panel admin
-- Pengecekan tautan, gambar, dan fitur website secara berkala agar tidak ada broken link
-- Monitoring performa website (kecepatan loading, uptime)
-- Pembaruan tampilan (UI/UX) mengikuti tren desain dan masukan pelanggan
-
----
-
-## 9. Rencana Penggunaan Data Analytics untuk Pengambilan Keputusan
-
-- **Analisis produk terlaris:** memantau kategori dan item yang paling banyak dibeli untuk menentukan fokus stok dan promosi
-- **Analisis perilaku pengunjung:** menggunakan tools seperti Google Analytics untuk melihat halaman yang paling banyak dikunjungi dan tingkat konversi dari kunjungan ke pembelian
-- **Analisis keranjang ditinggalkan (cart abandonment):** mengidentifikasi pola pelanggan yang menambahkan produk ke keranjang tetapi tidak checkout, untuk menyusun strategi retargeting
-- **Analisis metode pembayaran favorit:** menentukan metode pembayaran mana yang paling sering digunakan untuk mengoptimalkan pengalaman checkout
-- **Segmentasi pelanggan berdasarkan histori pembelian:** untuk personalisasi promosi dan rekomendasi produk
-- **Evaluasi efektivitas kampanye promosi:** mengukur ROI dari setiap kampanye diskon/media sosial berdasarkan peningkatan penjualan
 
 ---
 
