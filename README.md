@@ -38,7 +38,7 @@ Website responsif dan tetap nyaman diakses lewat perangkat mobile.
 **Tampilan Mobile Simulasi Checkout — Form Data Pengiriman**
 Pelanggan mengisi data penerima dan alamat pengiriman sebelum lanjut ke pembayaran.
 
-![Form Checkout](image/checkout.jpg)
+![Form Checkout](image/chekout.jpg)
 
 **Tampilan Mobile Simulasi Checkout — Pembayaran QRIS**
 Simulasi pembayaran menggunakan QRIS lengkap dengan ringkasan pesanan dan total tagihan.
