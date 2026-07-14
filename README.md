@@ -13,6 +13,12 @@
 
 ---
 
+## Link Website
+
+Repository Github: https://github.com/adinda0207/Web-E-Commerce-Adinda-Julia-Anggraeni-AG-Collection.git
+Link Website (Github pages): https://adinda0207.github.io/Web-E-Commerce-Adinda-Julia-Anggraeni-AG-Collection/
+Link YouTube: https://youtu.be/IzbHQU0vRIU
+
 ## Dokumentasi Tampilan Website
 
 **Halaman Home-Desktop**
