@@ -214,15 +214,16 @@ A.G Collection adalah toko fashion online yang menjual pakaian dan aksesoris unt
 
 ---
 
-## Struktur Proyek
+## Struktur Folder
 
 ```
 Tugas-UAS-Adinda-Julia-Anggraeni
 │
-├── index.html              
-├── style.css          
-├── script.js
-├── image
+├── index.html               # Halaman utaman
+├── style.css                # Style tampilan website                
+├── script.js                # Logika keranjang belanja, chekout, admin, dan yang lain
+├── image                    # Folder gambar 
+├── README.md                # Dokumentasi proyek
 ```
 
 ---
