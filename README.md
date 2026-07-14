@@ -15,7 +15,7 @@
 
 ## Dokumentasi Tampilan Website
 
-**Halaman Home-Dsktop**
+**Halaman Home-Desktop**
 Tampilan awal website dengan hero section dan tagline "Define Your Culture".
 
 ![Halaman Home](image/home.jpg)
@@ -35,6 +35,7 @@ Dimana admin bisa login untuk mengelola produk, seperti menambah produk baru dan
 Jika ingin masuk mode admin harus memasukan username dan password.
 
 Username: admin
+
 Password: admin123
 
 ![Halaman Admin-Desktop](image/admin.jpg)
