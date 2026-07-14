@@ -33,6 +33,7 @@ Navigasi produk berdasarkan kategori: Wanita, Pria, Anak-anak, Unisex, dan Akses
 **Halaman Admin-Desktop**
 Dimana admin bisa login untuk mengelola produk, seperti menambah produk baru dan mengubah stok.
 Jika ingin masuk mode admin harus memasukan username dan password.
+
 Username: admin
 Password: admin123
 
